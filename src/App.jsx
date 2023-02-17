@@ -4,7 +4,6 @@ import {useMovies} from './hooks/useMovies';
 import {Movies} from './components/Movies';
 import debounce from 'just-debounce-it';
 
-
 function useSearch(){
   const [error, setError] = useState(null);
   const [search, updateSearch] = useState('');
@@ -88,6 +87,7 @@ function App() {
       }
       
     </main>
+
   </div>
   )
 }
