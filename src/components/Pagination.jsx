@@ -1,6 +1,6 @@
 const Pagination = ({ currentPage, totalPages, onPrevPage, onNextPage }) => {
     return (
-      <div>
+      <div className="text-center">
         <button onClick={onPrevPage} disabled={currentPage === 1}>
           Prev
         </button>

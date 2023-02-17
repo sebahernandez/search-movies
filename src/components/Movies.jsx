@@ -18,7 +18,7 @@ function MovieList({ movies, currentPage, moviesPerPage }) {
 
 export function ListMovies({ movies }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const moviesPerPage = 3;
+  const moviesPerPage = 6;
 
   const totalPages = Math.ceil(movies.length / moviesPerPage);
 

@@ -37,11 +37,15 @@ form{
     gap:32px;
 }
 .movie h3, .movie p{
+    font-size:0.9rem;
     padding: 0;
 }
 .movie{
     text-align: center;
 }
 .movie img{
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
     border-radius: 8px;
 }
