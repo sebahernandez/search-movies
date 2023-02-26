@@ -74,7 +74,7 @@ function App() {
             value={search} 
             name="query" 
             placeholder='Avengers, Star Wars, Matrix...' 
-            class='flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+            className='flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
           />
           <button className='ml-2
             bg-blue-500 
