@@ -55,7 +55,7 @@ export function ListMovies({ movies }) {
 
   return (
     <>
-      <div class="py-3 sm:max-w-xl sm:mx-auto">
+      <div className="py-3 sm:max-w-xl sm:mx-auto">
         <MovieList movies={movies} currentPage={currentPage} moviesPerPage={moviesPerPage} />
       </div>
       <Pagination

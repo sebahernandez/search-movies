@@ -65,9 +65,9 @@ function App() {
   }
 
   return (
-  <div className='container mx-auto flex flex-col justify-center items-center'>
+  <div className="container mx-auto flex flex-col justify-center items-center">
       <h1 className="text-center text-5xl font-bold text-blue-500 py-9">Finder Film</h1>
-      <form className=" w-3/5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+      <form className="w-3/5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
       <div className="flex">
           <input 
             onChange={handleChange} 
