@@ -65,20 +65,46 @@ function App() {
   }
 
   return (
-  <div className='page'>
-      <h1>Buscador de películas</h1>
-      <form className='form' onSubmit={handleSubmit}>
-        <input 
-          onChange={handleChange} 
-          value={search} 
-          name="query" 
-          placeholder='Avengers, Star Wars, Matrix...' 
-        />
-        <input type="checkbox" id="sort" name="sort" onChange={handleSort}/>
-        <button type='submit'>Buscar Pelicula</button>
-      </form>
+  <div className='container mx-auto flex flex-col justify-center items-center'>
+      <h1 className="text-center text-5xl font-bold text-blue-500 py-9">Finder Film</h1>
+      <form className=" w-3/5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+      <div className="flex">
+          <input 
+            onChange={handleChange} 
+            value={search} 
+            name="query" 
+            placeholder='Avengers, Star Wars, Matrix...' 
+            class='flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+          />
+          <button className='ml-2
+            bg-blue-500 
+            hover:bg-blue-400 
+            text-white 
+            font-bold 
+            py-2 
+            px-4 
+            border-b-4
+            border-blue-700
+            hover:border-blue-500 
+            rounded inline-block' 
+            type='submit'
+          >
+            Buscar Pelicula
+          </button>
+      </div>
+
+
+      <label className='md:w-2/3 block text-gray-500 font-bold pt-3' htmlFor="sort">
+        <input className="mr-2 leading-tight" type="checkbox" id="sort" name="sort" onChange={handleSort} />
+        <span className="text-sm">Ordenar peliculas por nombre</span>
+      </label>
+      </form>       
+     
+
       {error && <p className='error'>{error}</p>}
-    <main>
+      
+
+    <main>  
       
       {
       loading 
@@ -92,4 +118,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
