@@ -9,17 +9,26 @@ function MovieList({ movies, currentPage, moviesPerPage }) {
   const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
 
   return currentMovies.map((movie) => (
-   
-    <div className="flex items-center justify-center relative w-full mb-5 group/details" key="{movie.id}">
-        <img src={movie.poster} alt={movie.title} class="w-full rounded-md object-cover" />
+    <div
+      key={movie.id}
+      className="text-white overflow-hidden mx-3 text-center py-5"
+    >
+      <img
+        src={movie.poster}
+        alt={movie.title}
+        className="w-64 h-64 object-cover rounded-md"
+      />
+      <div className="flex flex-col text-left py-3">
+        <h3 className="text-sm font-semibold">{movie.title}</h3>
+        <p className="text-xs text-gray-600">Año: {movie.year}</p>
+      </div>
     </div>
-   
   ));
 }
 
 export function ListMovies({ movies }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const moviesPerPage = 6;
+  const moviesPerPage = 4;
 
   const totalPages = Math.ceil(movies.length / moviesPerPage);
 
@@ -33,9 +42,13 @@ export function ListMovies({ movies }) {
 
   return (
     <>
-    <div class="columns-2 sm:columns-3 lg:columns-4 gap-5">
-        <MovieList movies={movies} currentPage={currentPage} moviesPerPage={moviesPerPage} />
-    </div>
+      <section className="flex">
+        <MovieList
+          movies={movies}
+          currentPage={currentPage}
+          moviesPerPage={moviesPerPage}
+        />
+      </section>
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
@@ -46,23 +59,12 @@ export function ListMovies({ movies }) {
   );
 }
 
-export function NoMoviesResult () {
-    return (
-      <p>No se encontraron resultados</p>
-    )
+export function NoMoviesResult() {
+  return <p>No se encontraron resultados</p>;
 }
 
-export function Movies({movies}) {
-   
-    const hasMovies = movies?.length > 0;
-  
-    return (
-        <>
-            {
-                hasMovies 
-                ? <ListMovies movies={movies} /> 
-                : <NoMoviesResult />
-            }  
-        </>
-    )
+export function Movies({ movies }) {
+  const hasMovies = movies?.length > 0;
+
+  return <>{hasMovies ? <ListMovies movies={movies} /> : <NoMoviesResult />}</>;
 }

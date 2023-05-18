@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="footer bg-black text-white py-10">
+    <footer className="footer bg-blue-600 text-white py-10">
       <div className="container mx-auto">
         <p className="text-center">
           Este es el contenido de mi footer. Puedes poner aquí cualquier
